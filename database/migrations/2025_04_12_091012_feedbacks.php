@@ -13,12 +13,15 @@ return new class extends Migration
     {
         //
         Schema::create('feedback', function (Blueprint $table) {
-            $table->id('feedback_id');
-            $table->foreign('event_id')->references('event_id')->on('events')->onDelete('cascade');
-            $table->foreign('volunteer_id')->references('volunteer_id')->on('volunteers')->onDelete('cascade');
+            $table->uuid('feedback_id')->primary();  // Sử dụng uuid làm khóa chính
+            $table->uuid('event_id');  // Cột event_id
+            $table->uuid('volunteer_id');  // Cột volunteer_id
+            $table->foreign('event_id')->references('event_id')->on('events')->onDelete('cascade');  // Khóa ngoại với bảng events
+            $table->foreign('volunteer_id')->references('volunteer_id')->on('volunteers')->onDelete('cascade');  // Khóa ngoại với bảng volunteers
             $table->text('content');
             $table->timestamps();
         });
+        
         
     }
 

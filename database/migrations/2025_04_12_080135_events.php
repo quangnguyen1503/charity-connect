@@ -14,17 +14,19 @@ return new class extends Migration
         //
         Schema::create('events', function (Blueprint $table) {
             $table->uuid('event_id')->primary();
+            $table->uuid('organization_id');  // Thêm cột organization_id
+
             $table->foreign('organization_id')->references('organization_id')->on('organizations')->onDelete('cascade');
             $table->string('name');
             $table->text('description');
             $table->timestamp('start_date');
-            $table->timestamp('end_date');
+            $table->timestamp('end_date')->nullable();
             $table->string('location');
             $table->integer('min_quantity');
             $table->integer('max_quantity');
             $table->integer('quantity_now');
             $table->string('status')->default('active');
-            $table->string('approved')->default('public');
+            $table->string('approved')->default('pending');
             $table->string('image')->nullable();
             $table->timestamps();
         });

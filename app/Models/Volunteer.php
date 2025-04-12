@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Volunteer extends Model
 {
     use HasFactory;
+    
     protected $primaryKey = 'volunteer_id';
     public $incrementing = false;
     protected $keyType = 'string';
