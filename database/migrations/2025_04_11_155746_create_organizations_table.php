@@ -19,9 +19,11 @@ return new class extends Migration
             $table->string('fullname');
             $table->string('address');
             $table->string('phone');
+            $table->date('founded_at'); // Ngày thành lập
+            $table->string('representative');
             $table->text('description')->nullable();
             $table->string('avatar')->nullable();
-            $table->string('role')->nullable();
+            $table->string('role');
             $table->timestamps();
         });
      
