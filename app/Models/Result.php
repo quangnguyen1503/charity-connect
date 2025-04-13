@@ -11,9 +11,9 @@ class Result extends Model
     public $incrementing = false;
     protected $keyType = 'string';
 
-    public function volunteer()
+    public function event()
     {
-        return $this->belongsTo(Volunteer::class, 'volunteer_id', 'volunteer_id');
+        return $this->belongsTo(Event::class, 'event_id', 'event_id');
     }
 }
 

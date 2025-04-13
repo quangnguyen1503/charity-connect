@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('representative');
             $table->text('description')->nullable();
             $table->string('avatar')->nullable();
+            $table->string('approved')->default('pending');
             $table->string('role');
             $table->timestamps();
         });

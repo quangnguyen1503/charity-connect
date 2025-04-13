@@ -15,7 +15,7 @@ class OrganizationController extends Controller
     {
         $this->organizationService = $organizationService;
     }
-
+    // lấy thông tin profile của tổ chức
     public function profile(string $id)
     {
         try {
@@ -31,5 +31,26 @@ class OrganizationController extends Controller
                 'message' => 'Organization not found'
             ], 404);
         }
+    }
+    // lấy danh sách tổ chức đang chờ duyệt
+    public function pending()
+    {
+        $pendingOrgs = $this->organizationService->getPendingOrganizations();
+
+        return response()->json([
+            'success' => true,
+            'data' => $pendingOrgs
+        ]);
+    }
+
+    // duyệt tổ chức
+    public function approve($id)
+    {
+        $result = $this->organizationService->approve($id);
+
+        return response()->json([
+            'success' => $result,
+            'message' => $result ? 'Duyệt tổ chức thành công.' : 'Duyệt tổ chức thất bại.'
+        ]);
     }
 }

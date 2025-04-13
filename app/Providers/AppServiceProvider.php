@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Repositories\Contracts\ManagementActionsRepositoryInterface;
 use Illuminate\Support\ServiceProvider;
 use App\Repositories\Contracts\VolunteerRepositoryInterface;
 use App\Repositories\Eloquent\VolunteerRepository;
@@ -16,8 +17,8 @@ class AppServiceProvider extends ServiceProvider
     public function register(): void
     {
         //
-        $this->app->bind(VolunteerRepositoryInterface::class, VolunteerRepository::class);
-        $this->app->bind(OrganizationRepositoryInterface::class, OrganizationRepository::class);
+  
+        $this->app->bind(ManagementActionsRepositoryInterface::class, OrganizationRepository::class);
 
 
     }

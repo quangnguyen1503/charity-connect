@@ -122,5 +122,9 @@ return [
         'driver' => env('APP_MAINTENANCE_DRIVER', 'file'),
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
+    // 'providers' => [
+    //     // Các Service Providers khác
+    //     App\Providers\RouteServiceProvider::class, // Thêm provider của bạn ở đây
+    // ],
 
 ];

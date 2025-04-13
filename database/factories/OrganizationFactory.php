@@ -24,6 +24,7 @@ class OrganizationFactory extends Factory
             'representative' => $this->faker->name,  // Người đại diện
             'description' => $this->faker->optional()->text,
             'avatar' => $this->faker->imageUrl(),
+            'approved' => $this->faker->randomElement(['pending', 'approved', 'rejected']),
             'role' => $this->faker->word,
         ];
     }
