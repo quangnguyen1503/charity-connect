@@ -14,8 +14,8 @@ return new class extends Migration
         //
         Schema::create('results', function (Blueprint $table) {
             $table->uuid('result_id')->primary();
-            $table->uuid('volunteer_id');
-            $table->foreign('volunteer_id')->references('volunteer_id')->on('volunteers')->onDelete('cascade');
+            $table->uuid('event_id');
+            $table->foreign('event_id')->references('event_id')->on('events')->onDelete('cascade');
             $table->text('content');
             $table->string('images');
            
