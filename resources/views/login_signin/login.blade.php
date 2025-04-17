@@ -17,18 +17,25 @@
         <div class="right-panel">
             <div class="box-login">
                 <h1>Đăng nhập</h1>
-                <form class="login-form" action="/login" method="POST">
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                    {{ $errors->first() }}
+                </div>
+                @endif
+
+                <form class="login-form" action="{{ route('login') }}" method="POST">
+                    @csrf
                     <label for="email">Email</label>
-                    <input type="email" id="email" placeholder="Nhập địa chỉ email">
-                    
+                    <input type="email" id="email" name="email" placeholder="Nhập địa chỉ email" required>
+
                     <label for="password">Mật khẩu</label>
-                    <input type="password" id="password" placeholder="Nhập mật khẩu">
-                    
+                    <input type="password" id="password" name="password" placeholder="Nhập mật khẩu" required>
+
                     <button type="submit">Đăng nhập</button>
                     
                     <p style="margin:12px auto;">Quên mật khẩu?</p>
                     
-                    <span style="margin:10px auto;">Bạn chưa có tài khoản? <a href="#">Đăng ký ngay</a></span>
+                    <span style="margin:10px auto;">Bạn chưa có tài khoản? <a href="/register">Đăng ký ngay</a></span>
                     <div class="social-login">
                         
                         <div class="social-buttons">
