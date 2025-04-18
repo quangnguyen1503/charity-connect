@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+
 class Result extends Model
 {
     use HasFactory;
@@ -15,5 +16,5 @@ class Result extends Model
     {
         return $this->belongsTo(Event::class, 'event_id', 'event_id');
     }
+    protected $table = 'results';
 }
-
