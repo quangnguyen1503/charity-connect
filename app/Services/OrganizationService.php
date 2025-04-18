@@ -27,6 +27,6 @@ class OrganizationService
     // duyệt tổ chức
     public function approve(string $id): bool
     {
-        return $this->organizationRepo->approve($id);
+        return $this->organizationRepo->approve($id)->save();
     }
 }
