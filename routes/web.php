@@ -20,4 +20,4 @@ Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('regi
 Route::post('/register', [AuthController::class, 'register'])->name('register');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/editvolunteer', [Account::class, 'editvolunteerShow'])->name('editvolunteer.show');
-Route::post('/editvolunteer', [Account::class, 'editvolunteer'])->name('editvolunteer');
+Route::post('/editvolunteer/{id}', [Account::class, 'editvolunteer'])->name('editvolunteer');

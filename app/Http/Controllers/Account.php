@@ -21,19 +21,25 @@ class Account extends Controller
     }
 
     public function editvolunteer(Request $request, $id)
-    {
-        $request->validate([
-            'username' => 'required|string|max:255',
-            'email' => 'required|email',
-            'full_name' => 'required|string|max:255',
-            'phone' => 'nullable|string|max:20',
-            'address' => 'nullable|string',
-        ]);
+{
+    $request->validate([
+        'username' => 'required|string|max:255',
+        'email' => 'required|email',
+        'fullname' => 'required|string|max:255',
+        'phone' => 'nullable|string|max:20',
+        'address' => 'nullable|string',
+    ]);
 
-        $volunteer = Volunteer::findOrFail($id);
-        $volunteer->update($request->all());
+    $volunteer = Volunteer::findOrFail($id);
+    $volunteer->username = $request->username;
+    $volunteer->email = $request->email;
+    $volunteer->fullname = $request->fullname;
+    $volunteer->phone = $request->phone;
+    $volunteer->address = $request->address;
+    $volunteer->save();
 
-        return redirect()->route('account.editvolunteer', $id)->with('success', 'Cập nhật thành công!');
-    }
+    return redirect()->back()->with('success', 'Cập nhật thành công!');
+}
+
 }
 

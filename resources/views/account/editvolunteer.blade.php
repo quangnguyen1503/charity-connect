@@ -9,7 +9,13 @@
         </div>
 
         <h2>Chỉnh sửa thông tin cá nhân</h2>
-        <form method="POST" action="{{ route('editvolunteer') }}">
+        @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+        @endif
+    
+        <form method="POST" action="{{ route('editvolunteer', ['id' => $volunteer->volunteer_id]) }}">
             @csrf
             <div class="form-group">
                 <label>Tên tài khoản *</label>
