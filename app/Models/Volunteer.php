@@ -26,10 +26,6 @@ class Volunteer extends Model
             ->withTimestamps();
     }
 
-    public function results()
-    {
-        return $this->hasMany(Result::class, 'volunteer_id', 'volunteer_id');
-    }
     public function feedbacks()
     {
         return $this->hasMany(Feedback::class, 'volunteer_id', 'volunteer_id');

@@ -24,6 +24,11 @@ class Event extends Model
             ->withTimestamps();
     }
 
+    public function results()
+    {
+        return $this->hasOne(Result::class, 'event_id', 'event_id');
+    }
+
     public function notifications()
     {
         return $this->hasMany(Notification::class, 'event_id', 'event_id');

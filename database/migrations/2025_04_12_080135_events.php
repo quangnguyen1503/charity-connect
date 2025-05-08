@@ -15,7 +15,6 @@ return new class extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->uuid('event_id')->primary();
             $table->uuid('organization_id');  // Thêm cột organization_id
-
             $table->foreign('organization_id')->references('organization_id')->on('organizations')->onDelete('cascade');
             $table->string('name');
             $table->text('description');

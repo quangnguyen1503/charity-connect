@@ -1,178 +1,47 @@
-<header class="header_simple" id="header_simple">
-    <!-- Desktop Header -->
-    <div class="header-desktop w-100">
-        <div class="container container-new">
-            <div class="d-flex align-items-center justify-content-between h-100">
-                <!-- Logo -->
-                <a href="/" class="logo">
-                    <img src="{{ asset('images/Nitro_Wallpaper_5000x2813.jpg') }}" alt="Thiện Nguyện" width="247" height="60" style="width: 130px; height: auto;">
-                </a>
-
-                <!-- Search Box -->
-                <div id="input_search_header">
-                    <img src="{{ asset('images/icon-search.svg') }}" alt="icon search" width="20" height="20" style="width: 20px; height: 20px;">
-                    <input type="text" value="" placeholder="Tìm kiếm tên chiến dịch">
-                </div>
-
-                <!-- Navigation Menu -->
-                <div class="menuHeader flex-grow-1 flex-shrink-1">
-                    <div class="menu_header_list menu_header_list_in_large" id="menu_header_list">
-                        <!-- Ủng hộ Menu -->
-                        <div class="menu_header_item">
-                            <span>Ủng hộ</span>
-                            <div class="sub_menu_header_item">
-                                <div class="sub_menu_header_list" id="sub_menu_header_list" style="left:-12px">
-                                    <div class="diamond diamond_in_large diamond_in_large_first"></div>
-                                    <div class="sub_menu_content sub_menu_content_in_large sub_menu_content__in_large_first">
-                                        <div class="sub_background"></div>
-                                        <div class="sub_menu_list">
-                                            <div class="sub_menu_item">
-                                                <div class="sub_menu_dropdown_item">
-                                                    <span>Chiến dịch</span>
-                                                </div>
-                                            </div>
-                                            <div class="sub_menu_item">
-                                                <div class="sub_menu_dropdown_item">
-                                                    <span>Đồng hành</span>
-                                                </div>
-                                            </div>
-                                            <div class="sub_menu_item">
-                                                <div class="sub_menu_dropdown_item">
-                                                    <span>Tổ chức gây quỹ</span>
-                                                </div>
-                                            </div>
-                                            <div class="sub_menu_item">
-                                                <div class="sub_menu_dropdown_item">
-                                                    <span>Cá nhân gây quỹ</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Gây quỹ Menu -->
-                        <div class="menu_header_item">
-                            <span>Gây quỹ</span>
-                            <div class="sub_menu_header_item">
-                                <div class="sub_menu_header_list" id="sub_menu_header_list">
-                                    <div class="diamond diamond_in_large"></div>
-                                    <div class="sub_menu_content sub_menu_content_in_large">
-                                        <div class="sub_background"></div>
-                                        <div class="sub_menu_list">
-                                            <div class="sub_menu_item">
-                                                <div class="sub_menu_dropdown_item">
-                                                    <span>Bắt đầu</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Khám phá Menu -->
-                        <div class="menu_header_item">
-                            <span>Khám phá</span>
-                            <div class="sub_menu_header_item">
-                                <div class="sub_menu_header_list" id="sub_menu_header_list">
-                                    <div class="diamond diamond_in_large"></div>
-                                    <div class="sub_menu_content sub_menu_content_in_large">
-                                        <div class="sub_background"></div>
-                                        <div class="sub_menu_list">
-                                            <div class="sub_menu_item">
-                                                <div class="sub_menu_dropdown_item">
-                                                    <span>Bản đồ thiện nguyện</span>
-                                                </div>
-                                            </div>
-                                            <div class="sub_menu_item">
-                                                <div class="sub_menu_dropdown_item">
-                                                    <span>Sự kiện thiện nguyện</span>
-                                                </div>
-                                            </div>
-                                            <div class="sub_menu_item">
-                                                <div class="sub_menu_dropdown_item">
-                                                    <span>Bảng tin</span>
-                                                </div>
-                                            </div>
-                                            <div class="sub_menu_item">
-                                                <div class="sub_menu_dropdown_item">
-                                                    <span>Tin tức</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Giới thiệu Menu -->
-                        <div class="menu_header_item">
-                            <span>Giới thiệu</span>
-                            <div class="sub_menu_header_item">
-                                <div class="sub_menu_header_list" id="sub_menu_header_list">
-                                    <div class="diamond diamond_in_large"></div>
-                                    <div class="sub_menu_content sub_menu_content_in_large">
-                                        <div class="sub_background"></div>
-                                        <div class="sub_menu_list">
-                                            <div class="sub_menu_item">
-                                                <div class="sub_menu_dropdown_item">
-                                                    <span>Về thiện nguyện</span>
-                                                </div>
-                                            </div>
-                                            <div class="sub_menu_item">
-                                                <div class="sub_menu_dropdown_item">
-                                                    <span>Hỏi đáp</span>
-                                                </div>
-                                            </div>
-                                            <div class="sub_menu_item">
-                                                <div class="sub_menu_dropdown_item">
-                                                    <span>Điều khoản</span>
-                                                </div>
-                                            </div>
-                                            <div class="sub_menu_item">
-                                                <div class="sub_menu_dropdown_item">
-                                                    <span>Chính sách bảo mật</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Login and Create Campaign buttons -->
-                <div class="boxSearchAndLogin">
-                    <button class="btn-create-donate-target">
-                        <span>Tạo chiến dịch</span>
-                    </button>
-                    <div class="btnLogin">Đăng nhập</div>
-                </div>
-            </div>
+<div data-layer="Background" class="Background" style="width: 1920px; height: 76px; position: relative; background: white">
+    <img data-layer="logo.663b61a0.webp" class="Logo663b61a0Webp" style="width: 151px; height: 36.67px; left: 360px; top: 19.66px; position: absolute" src="data:image/png;base64,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" />
+    <div data-layer="Background+Border" class="BackgroundBorder" style="width: 220px; height: 40px; left: 527px; top: 18px; position: absolute; background: white; overflow: hidden; border-radius: 32px; outline: 1px #CACACA solid; outline-offset: -1px">
+      <div data-layer="icon search" class="IconSearch" style="width: 20px; height: 20px; left: 17px; top: 10px; position: absolute; overflow: hidden">
+        <div data-layer="image fill" class="ImageFill" style="width: 20px; height: 20px; left: 0px; top: 0px; position: absolute; overflow: hidden">
+          <div data-layer="image" class="Image" style="width: 20px; height: 20px; left: 0px; top: 0px; position: absolute; overflow: hidden">
+            <div data-layer="Vector" class="Vector" style="width: 20px; height: 20px; left: 0px; top: 0px; position: absolute; background: #F54A00"></div>
+          </div>
         </div>
-    </div>
-
-    <!-- Mobile Header -->
-    <div class="header-mobile">
-        <div class="container h-100">
-            <div class="d-flex align-items-center justify-content-between h-100">
-                <div class="header-mobile-left d-flex align-items-center">
-                    <img class="logo-app" src="{{ asset('images/Nitro_Wallpaper_5000x2813.jpg') }}" alt="Thiện Nguyện" width="130" height="30">
-                </div>
-                <div class="header-mobile-right d-flex align-items-center">
-                    <div class="noti">
-                        <span>
-                            <img src="{{ asset('images/icon-notification.svg') }}" alt="Notification" width="24" height="24">
-                        </span>
-                    </div>
-                    <div>
-                        <a class="download-link" rel="nofollow" href="#">Tải App</a>
-                    </div>
-                </div>
-            </div>
+      </div>
+      <div data-layer="Input" class="Input" style="width: 158px; height: 21.59px; left: 45px; top: 9.20px; position: absolute; background: white; overflow: hidden">
+        <div data-layer="Container" class="Container" style="width: 154px; height: 17px; left: 2px; top: 2px; position: absolute; overflow: hidden">
+          <div data-layer="Tìm kiếm tên chiến dịch" class="TMKiMTNChiNDCh" style="width: 154.27px; height: 17px; left: 0px; top: 0px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: #A8A8A8; font-size: 14px; font-family: Inter; font-weight: 400; word-wrap: break-word">Tìm kiếm tên chiến dịch</div>
         </div>
+      </div>
     </div>
-</header>
+    <div data-layer="Container" class="Container" style="width: 72.08px; height: 24.63px; left: 881.91px; top: 25.69px; position: absolute">
+      <div data-layer="Ủng hộ" class="NgH" style="width: 48.43px; height: 17px; left: 0px; top: 3px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: #626262; font-size: 14px; font-family: Inter; font-weight: 500; line-height: 21px; word-wrap: break-word">Ủng hộ</div>
+      <div data-layer="SVG" class="Svg" style="width: 24px; height: 24px; left: 48.07px; top: 0.62px; position: absolute">
+        <div data-layer="Vector" class="Vector" style="width: 11.17px; height: 6.59px; left: 6.41px; top: 9px; position: absolute; background: black"></div>
+      </div>
+    </div>
+    <div data-layer="Container" class="Container" style="width: 79.13px; height: 24.63px; left: 993.98px; top: 25.69px; position: absolute">
+      <div data-layer="Gây quỹ" class="GYQu" style="width: 55.50px; height: 17px; left: 0px; top: 3px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: #626262; font-size: 14px; font-family: Inter; font-weight: 500; line-height: 21px; word-wrap: break-word">Gây quỹ</div>
+      <div data-layer="SVG" class="Svg" style="width: 24px; height: 24px; left: 55.13px; top: 0.62px; position: absolute">
+        <div data-layer="Vector" class="Vector" style="width: 11.17px; height: 6.59px; left: 6.41px; top: 9px; position: absolute; background: black"></div>
+      </div>
+    </div>
+    <div data-layer="Container" class="Container" style="width: 91.20px; height: 24.63px; left: 1113.11px; top: 25.69px; position: absolute">
+      <div data-layer="Khám phá" class="KhMPh" style="width: 67.50px; height: 17px; left: 0px; top: 3px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: #626262; font-size: 14px; font-family: Inter; font-weight: 500; line-height: 21px; word-wrap: break-word">Khám phá</div>
+      <div data-layer="SVG" class="Svg" style="width: 24px; height: 24px; left: 67.20px; top: 0.62px; position: absolute">
+        <div data-layer="Vector" class="Vector" style="width: 11.17px; height: 6.59px; left: 6.41px; top: 9px; position: absolute; background: black"></div>
+      </div>
+    </div>
+    <div data-layer="Container" class="Container" style="width: 87.05px; height: 24.63px; left: 1244.31px; top: 25.69px; position: absolute">
+      <div data-layer="Giới thiệu" class="GiIThiU" style="width: 64.03px; height: 17px; left: 0px; top: 3px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: #626262; font-size: 14px; font-family: Inter; font-weight: 500; line-height: 21px; word-wrap: break-word">Giới thiệu</div>
+      <div data-layer="SVG" class="Svg" style="width: 24px; height: 24px; left: 63.05px; top: 0.62px; position: absolute">
+        <div data-layer="Vector" class="Vector" style="width: 11.17px; height: 6.59px; left: 6.41px; top: 9px; position: absolute; background: black"></div>
+      </div>
+    </div>
+    <div data-layer="Button" class="Button" style="width: 120px; height: 32px; left: 1355.36px; top: 22px; position: absolute; background: linear-gradient(86deg, #FF6C57 0%, #FF922E 100%); border-radius: 11px">
+      <div data-layer="Tạo chiến dịch" class="TOChiNDCh" style="width: 97.62px; height: 17px; left: 11.36px; top: 6.80px; position: absolute; text-align: center; justify-content: center; display: flex; flex-direction: column; color: white; font-size: 14px; font-family: Inter; font-weight: 600; line-height: 22.40px; word-wrap: break-word">Tạo chiến dịch</div>
+    </div>
+    <div data-layer="Container" class="Container" style="width: 72.64px; height: 19.59px; left: 1487.36px; top: 28.20px; position: absolute">
+      <div data-layer="Đăng nhập" class="NgNhP" style="width: 72.95px; height: 17px; left: 0px; top: 1px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: #626262; font-size: 14px; font-family: Inter; font-weight: 500; line-height: 19.60px; word-wrap: break-word">Đăng nhập</div>
+    </div>
+  </div>
