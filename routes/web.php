@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VolunteerController;
 use App\Http\Controllers\OrganizationController;
-
+use App\Http\Controllers\EventController;
 
 
 
@@ -12,16 +12,23 @@ use App\Http\Controllers\OrganizationController;
 //     UserController::class,
 //     'index'
 // ])->name('profile');
-Route::get('/volunteer/{id}', [VolunteerController::class, 'profile']);
-Route::get('/organization/{id}', [OrganizationController::class, 'profile']);
+Route::get('/volunteers/{id}', [VolunteerController::class, 'profile']);
+Route::get('/organizations/{id}', [OrganizationController::class, 'profile']);
 Route::get('/organizations/pending', [OrganizationController::class, 'pending']);
 // Route::post('/organizations/{id}/approve', [OrganizationController::class, 'approve']);
 
 
-Route::get('/sanctum/csrf-cookie', function () {
-    return response()->json(['csrf_token' => csrf_token()]);
-});
 
-Route::get('/', function () {
-    return view('contents.profile');
-})->name('home');
+
+// Route::get('/', function () {
+//     return view('contents.profile');
+// })->name('home');
+
+
+// event route
+Route::get('/events/pending',[EventController::class,'pending']);
+Route::get('/', [EventController::class, 'index']);
+
+
+//route vinh danh
+Route::get('/top', [VolunteerController::class, 'topVolunteersLastQuarter']);
