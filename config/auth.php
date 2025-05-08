@@ -40,6 +40,16 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+
+        'volunteer' => [
+            'driver' => 'session',
+            'provider' => 'volunteers',
+        ],
+    
+        'organization' => [
+            'driver' => 'session',
+            'provider' => 'organizations',
+        ],
     ],
 
     /*
@@ -69,6 +79,16 @@ return [
         //     'driver' => 'database',
         //     'table' => 'users',
         // ],
+
+        'volunteers' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Volunteer::class,
+        ],
+    
+        'organizations' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Organization::class,
+        ],
     ],
 
     /*

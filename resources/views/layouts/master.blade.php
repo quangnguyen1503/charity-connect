@@ -41,7 +41,7 @@
     <!-- CSS Files --> 
     <link rel="stylesheet" href="{{ asset('css/profile.css') }}">
     <link rel="stylesheet" href="{{ asset('css/header.css') }}">
-    
+    <body class="@yield('body-class')">
     <!-- Additional CSS -->
     @yield('styles')
     
