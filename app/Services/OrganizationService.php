@@ -22,7 +22,7 @@ class OrganizationService
     // lấy danh sách tổ chức đang chờ duyệt
     public function getPendingOrganizations()
     {
-        return $this->organizationRepo->getPendingOrganizations();
+        return $this->organizationRepo->getPending();
     }
     // duyệt tổ chức
     public function approve(string $id): bool

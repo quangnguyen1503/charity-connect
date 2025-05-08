@@ -18,19 +18,12 @@ class OrganizationController extends Controller
     // lấy thông tin profile của tổ chức
     public function profile(string $id)
     {
-        try {
-            $organization = $this->organizationService->getProfile($id);
 
-            return response()->json([
-                'success' => true,
-                'data' => $organization
-            ]);
-        } catch (ModelNotFoundException $e) {
-            return response()->json([
-                'success' => false,
-                'message' => 'Organization not found'
-            ], 404);
-        }
+
+        $organization = $this->organizationService->getProfile($id);
+
+            return View('organization.profile', compact('organization'));
+            // return $organization;
     }
     // lấy danh sách tổ chức đang chờ duyệt
     public function pending()

@@ -11,10 +11,31 @@ class OrganizationRepository implements BaseRepositoryInterface, ManagementActio
     {
         return Organization::findOrFail($id);
 
+    
     }
-    public function getPendingOrganizations()
+
+    public function getAll()
+    {
+        return Organization::orderBy('created_at', 'desc')->paginate(10);
+    }
+    public function getPending()
     {
         return Organization::where('approved', 'pending')->paginate(1);
+    }
+    public function getApproved()
+    {
+        return Organization::where('approved', 'approved')->paginate(1);
+    }
+    public function getRejected()
+    {
+        return Organization::where('approved', 'rejected')->paginate(1);
+    }
+    public function reject(string $id)
+    {
+        $organization = Organization::findOrFail($id);
+        $organization->approved = 'rejected';
+        $organization->save();
+        return $organization;
     }
     public function approve(string $id)
     {
