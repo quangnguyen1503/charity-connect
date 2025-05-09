@@ -22,20 +22,22 @@ class AuthController extends Controller
 
         public function login(Request $request)
         {
+            $request->validate([
+                'type' => 'required|in:volunteer,organization',
+                'email' => 'required|email',
+                'password' => 'required'
+            ]);
+    
             $credentials = $request->only('email', 'password');
-        
-            if (Auth::guard('volunteer')->attempt($credentials)) {
+            $type = $request->input('type');
+    
+            if (Auth::guard($type)->attempt($credentials)) {
                 $request->session()->regenerate();
-        
-                // Lưu avatar vào session
-                $volunteer = Auth::guard('volunteer')->user();
-                $request->session()->put('avatar', $volunteer->avatar);
-        
                 return redirect()->intended('/');
             }
-        
+    
             return back()->withErrors([
-                'email' => 'Email hoặc mật khẩu không đúng.',
+                'email' => 'Sai email hoặc mật khẩu.',
             ]);
         }
         

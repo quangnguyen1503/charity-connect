@@ -74,6 +74,25 @@ button {
 login-form {
     margin-top: 50px;
 }
+
+.login-form select {
+    width: 107%;
+    padding: 10px;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+}
+
+/* Khi focus vào select */
+.login-form select:focus {
+    border-color: #ff924d;
+    outline: none;
+    background-color: #fff;
+}
 .social-buttons {
      display: flex;                         /* Use Flexbox for layout */
      justify-content: center;               /* Centering the buttons horizontally */

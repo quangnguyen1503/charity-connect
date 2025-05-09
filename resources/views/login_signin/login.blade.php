@@ -31,6 +31,12 @@
                     <label for="password">Mật khẩu</label>
                     <input type="password" id="password" name="password" placeholder="Nhập mật khẩu" required>
 
+                    <label>Đăng nhập với tư cách:</label>
+                    <select name="type" required>
+                        <option value="volunteer">Tình nguyện viên</option>
+                        <option value="organization">Tổ chức</option>
+                    </select>
+
                     <button type="submit">Đăng nhập</button>
                     
                     <p style="margin:12px auto;">Quên mật khẩu?</p>
