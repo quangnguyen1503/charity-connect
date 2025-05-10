@@ -23,6 +23,9 @@ class OrganizationFactory extends Factory
             'founded_at' => $this->faker->date(),  // Ngày thành lập
             'representative' => $this->faker->name,  // Người đại diện
             'description' => $this->faker->optional()->text,
+
+            'cover' => $this->faker->imageUrl(),
+            'website' => $this->faker->url,
             'avatar' => $this->faker->imageUrl(),
             'approved' => $this->faker->randomElement(['pending', 'approved', 'rejected']),
             'role' => $this->faker->word,

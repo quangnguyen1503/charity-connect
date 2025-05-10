@@ -2,10 +2,8 @@
 namespace App\Repositories\Eloquent;
 
 use App\Models\Organization;
-use App\Repositories\Contracts\BaseRepositoryInterface;
-use App\Repositories\Contracts\ManagementActionsRepositoryInterface;
-
-class OrganizationRepository implements BaseRepositoryInterface, ManagementActionsRepositoryInterface
+use App\Repositories\Repository\OrganizationRepositoryInterface;
+class OrganizationRepository implements OrganizationRepositoryInterface
 {
     public function findById(string $id)
     {
