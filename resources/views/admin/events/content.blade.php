@@ -1,4 +1,8 @@
 @extends('admin.admin')
+
+
+
+
 @section('content')
 <div class="content-wrapper">
     <div class="content-header">
@@ -29,10 +33,9 @@
                                     <tr>
                                         <th>ID</th>
                                         <th>Name</th>
+                                        <th>Organizer</th>
                                         <th>Time</th>
                                         <th>Location</th>
-                                        <th>Quantity</th>
-                                        <th>Image</th>
                                         <th>Status</th>
                                     </tr>
                                 </thead>
@@ -41,6 +44,7 @@
                                         <tr>
                                             <td style="max-width: 10%">{{ $event['event_id'] }}</td>
                                             <td>{{ $event['name'] }}</td>
+                                            <td>{{ $event['organization']['fullname'] }}</td>
                                             <td>
                                                 {{ \Carbon\Carbon::parse($event['start_date'])->format('d/m/Y H:i') }}
                                                 <br>
@@ -48,13 +52,10 @@
                                                 {{ \Carbon\Carbon::parse($event['end_date'])->format('d/m/Y H:i') }}
                                             </td>
                                             <td>{{ $event['location'] }}</td>
-                                            <td>{{ $event['quantity_now'] }} / {{ $event['max_quantity'] }}</td>
+                                            
                                             <td>
-                                                <img src="{{ $event['image'] }}" alt="Event Image" width="80">
-                                            </td>
-                                            <td>
-                                                <span class="badge badge-{{ $event['approved'] == 'pending' ? 'warning' : 'success' }}">
-                                                    {{ ucfirst($event['approved']) }}
+                                                <span class="badge badge-{{ $event['status'] == 'pending' ? 'warning' : 'success' }}">
+                                                    {{ ucfirst($event['status']) }}
                                                 </span>
                                             </td>
                                         </tr>

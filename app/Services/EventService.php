@@ -28,4 +28,18 @@ class EventService
     public function getAllEvents(){
         return $this->eventRepo->getAll();
     }
+
+    // lấy danh sách event đã được duyệt
+    public function getApprove(){
+        return $this->eventRepo->getApproved();
+    }
+
+    // lấy danh sách event đã bị từ chối
+    public function getRejected(){
+        return $this->eventRepo->getRejected();
+    }
+    // lấy thông tin chi tiết event
+    public function getEventById($id){
+        return $this->eventRepo->findById($id);
+    }
 }

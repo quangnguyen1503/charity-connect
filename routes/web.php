@@ -18,8 +18,6 @@ use App\Http\Controllers\EventController;
 //     'index'
 // ])->name('profile');
 Route::get('/volunteers/{id}', [VolunteerController::class, 'profile']);
-Route::get('/organizations/{id}', [OrganizationController::class, 'profile']);
-Route::get('/organizations/pending', [OrganizationController::class, 'pending']);
 // Route::post('/organizations/{id}/approve', [OrganizationController::class, 'approve']);
 
 
@@ -31,8 +29,25 @@ Route::get('/organizations/pending', [OrganizationController::class, 'pending'])
 
 
 // event route
-Route::get('/events/pending',[EventController::class,'pending']);
-Route::get('/', [EventController::class, 'index']);
+Route::get('/events/pending',[EventController::class,'getPendingEvents']);
+Route::get('/events/approved', [EventController::class, 'index']);
+Route::get('/events/rejected',[EventController::class,'getRejected']);
+
+Route::get('/events/{id}', [EventController::class, 'profile']);
+Route::get('/admin/events/{id}', [EventController::class, 'adminProfile']);
+
+
+
+// route tổ chức
+Route::get('/organizations/approved', [OrganizationController::class, 'getApproved']);
+Route::get('/organizations/pending', [OrganizationController::class, 'getPending']);
+
+Route::get('/organizations/rejected', [OrganizationController::class, 'getRejected']);
+
+Route::get('admin/organizations/{id}', [OrganizationController::class, 'profile']);
+Route::get('/organizations/{id}', [OrganizationController::class, 'index']);
+
+
 
 
 //route vinh danh
@@ -48,3 +63,14 @@ Route::post('/register', [AuthController::class, 'register'])->name('register');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/editvolunteer', [Account::class, 'editvolunteerShow'])->name('editvolunteer.show');
 Route::post('/editvolunteer/{id}', [Account::class, 'editvolunteer'])->name('editvolunteer');
+
+
+
+
+
+// route volunteer
+
+
+
+
+Route::get('/volunteers/{id}', [VolunteerController::class, 'profile']);
