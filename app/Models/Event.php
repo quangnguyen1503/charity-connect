@@ -52,4 +52,15 @@ class Event extends Model
     {
         return $this->hasMany(Feedback::class, 'event_id', 'event_id');
     }
+
+    protected static function booted()
+    {
+        static::creating(function ($event) {
+            if (empty($event->event_id)) {
+                $event->event_id = (string) Str::uuid();
+            }
+        });
+    }
+
+
 }

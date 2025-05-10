@@ -3,12 +3,14 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use App\Repositories\Contracts\VolunteerRepositoryInterface;
-use App\Repositories\Eloquent\VolunteerRepository;
-use App\Repositories\Contracts\OrganizationRepositoryInterface;
-use App\Repositories\Eloquent\OrganizationRepository;
-use App\Repositories\Contracts\EventRepositoryInterface;
 use App\Repositories\Eloquent\EventRepository;
+use App\Repositories\Repository\EventRepositoryInterface;
+use Illuminate\Pagination\Paginator;
+use App\Repositories\Eloquent\VolunteerRepository;
+use App\Repositories\Repository\VolunteerRepositoryInterface;
+use App\Repositories\Eloquent\OrganizationRepository;
+use App\Repositories\Repository\OrganizationRepositoryInterface;
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -17,9 +19,10 @@ class AppServiceProvider extends ServiceProvider
     public function register(): void
     {
         //
+  
+        $this->app->bind(EventRepositoryInterface::class, EventRepository::class);
         $this->app->bind(VolunteerRepositoryInterface::class, VolunteerRepository::class);
         $this->app->bind(OrganizationRepositoryInterface::class, OrganizationRepository::class);
-        $this->app->bind(EventRepositoryInterface::class, EventRepository::class);
 
 
     }
@@ -30,5 +33,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         //
+        Paginator::useBootstrap(); // thêm dòng này nếu chưa có
+
     }
 }

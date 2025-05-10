@@ -13,7 +13,7 @@ return new class extends Migration
     {
         //
         Schema::create('volunteers', function (Blueprint $table) {
-            $table->uuid('volunteer_id')->primary(); 
+            $table->uuid('volunteer_id')->primary();
             $table->string('username');
             $table->string('password');
             $table->string('email')->unique();
@@ -21,6 +21,8 @@ return new class extends Migration
             $table->string('address');
             $table->string('phone');
             $table->string('avatar')->nullable();
+            $table->string('cover')->nullable();
+            $table->string('point')->nullable();
             $table->string('role')->nullable();
             $table->timestamps();
         });

@@ -20,6 +20,8 @@ class VolunteerFactory extends Factory
             'address' => $this->faker->address,
             'phone' => $this->faker->phoneNumber,
             'avatar' => $this->faker->imageUrl(),
+            'cover' => $this->faker->imageUrl(),
+            'point' => $this->faker->numberBetween(0, 100),
             'role' => $this->faker->word,
         ];
     }

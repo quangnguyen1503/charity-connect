@@ -2,8 +2,9 @@
 
 namespace App\Services;
 
-use App\Models\Volunteer;
-use App\Repositories\Contracts\VolunteerRepositoryInterface;
+use App\Repositories\Repository\VolunteerRepositoryInterface;
+use App\Http\DTOs\Requests\TopVolunteerRequest;
+use Carbon\Carbon;
 
 class VolunteerService
 {
@@ -13,9 +14,17 @@ class VolunteerService
     {
         $this->volunteerRepo = $volunteerRepo;
     }
-
+    // lấy thông tin profile của tình nguyện viên
     public function getProfile(string $id)
     {
         return $this->volunteerRepo->findById($id);
     }
+
+    // lấy top tình nguyện viên trong quý vừa qua
+    public function getTopVolunteersLastQuarter(int $limit = 3)
+    {
+        return $this->volunteerRepo->getTopVolunteersLastQuarter($limit);
+    }
+
+    
 }

@@ -17,9 +17,16 @@ class VolunteerController extends Controller
     {
         $volunteer = $this->volunteerService->getProfile($id);
 
+        return view('volunteer.profile', compact('volunteer'));
+    }
+
+    public function topVolunteersLastQuarter()
+    {
+        $volunteers = $this->volunteerService->getTopVolunteersLastQuarter();
+
         return response()->json([
             'success' => true,
-            'data' => $volunteer
+            'data' => $volunteers
         ]);
     }
 
