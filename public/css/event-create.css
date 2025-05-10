@@ -1,0 +1,199 @@
+/* resources/css/event-create.css */
+body {
+    background-color: #F5F5F5;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #FF6200;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.event-form {
+    background-color: #FFFFFF;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 2px solid #FF6200;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.form-group label i {
+    margin-right: 8px;
+    color: #FF6200;
+    transition: color 0.3s ease;
+}
+
+.form-group label:hover i {
+    color: #FF8C40;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #FF6200;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #333;
+    background-color: #FFF;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #FF8C40;
+    box-shadow: 0 0 5px rgba(255, 98, 0, 0.3);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form-group input[type="file"] {
+    padding: 5px;
+    border: none;
+}
+
+.text-danger {
+    color: #FF6200;
+    font-size: 0.9rem;
+    margin-top: 5px;
+    display: block;
+}
+
+.btn-create {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: #FF6200;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.btn-create:hover {
+    background-color: #FF8C40;
+    transform: translateY(-2px);
+}
+
+.btn-create:active {
+    transform: translateY(0);
+}
+
+.btn-back {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background-color: #FF6200;
+    color: #FFFFFF;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.btn-back i {
+    margin-right: 8px;
+}
+
+.btn-back:hover {
+    background-color: #FF8C40;
+    transform: translateY(-2px);
+}
+
+.btn-back:active {
+    transform: translateY(0);
+}
+
+.alert-danger {
+    background-color: #FFE6E6;
+    border: 1px solid #FF6200;
+    color: #333;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.alert-danger ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.alert-danger li {
+    margin-bottom: 5px;
+}
+
+/* Hiệu ứng fade-in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .event-form {
+        padding: 20px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    .btn-create {
+        padding: 12px;
+        font-size: 1rem;
+    }
+
+    .btn-back {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+}

@@ -1,0 +1,274 @@
+/* resources/css/event-show.css */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.event-detail {
+    border: 1px solid #ccc; /* Viền mỏng màu xám thay cho cam */
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.event-layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.event-image {
+    flex: 1 1 300px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.event-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.event-image img:hover {
+    transform: scale(1.05);
+}
+
+.event-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.event-overlay h1 {
+    font-size: 2rem;
+    margin: 0;
+    color: #28A745;
+}
+
+.event-overlay p {
+    font-size: 1rem;
+    margin: 5px 0;
+    color: #fff;
+}
+
+.event-info {
+    flex: 1 1 400px;
+    background: #fff;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.event-info h2 {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.event-info p {
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+}
+
+.event-info p i {
+    margin-right: 10px;
+    color: #28A745;
+}
+
+.event-actions {
+    flex: 1 1 300px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn-action {
+    display: inline-block;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: fit-content;
+}
+
+.btn-register {
+    background-color: #28A745;
+}
+
+.btn-register:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+.btn-edit {
+    background-color: #007BFF;
+}
+
+.btn-edit:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.btn-delete {
+    background-color: #dc3545;
+}
+
+.btn-delete:hover {
+    background-color: #c82333;
+    transform: translateY(-2px);
+}
+
+.btn-action.loading {
+    position: relative;
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.btn-action.loading::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #fff;
+    border-top: 2px solid transparent;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+}
+
+.registered-message {
+    color: #666;
+    font-style: italic;
+    margin: 10px 0;
+}
+
+.event-content {
+    width: 100%;
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.event-content h2 {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.event-content p {
+    line-height: 1.6;
+}
+
+.event-organizers {
+    margin-top: 15px;
+}
+
+.event-organizers h3 {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.event-organizers a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.event-organizers a:hover {
+    text-decoration: underline;
+}
+
+.contact-info {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+}
+
+.contact-info p {
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+}
+
+.contact-info p i {
+    margin-right: 10px;
+    color: #28A745;
+}
+
+/* Hiệu ứng fade-in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hiệu ứng loading */
+@keyframes spin {
+    to {
+        transform: translateY(-50%) rotate(360deg);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .event-layout {
+        flex-direction: column;
+    }
+
+    .event-image, .event-info, .event-actions {
+        width: 100%;
+    }
+
+    .event-overlay h1 {
+        font-size: 1.5rem;
+    }
+
+    .event-overlay p {
+        font-size: 0.9rem;
+    }
+
+    .event-info h2, .event-content h2 {
+        font-size: 1.3rem;
+    }
+
+    .btn-action {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+}

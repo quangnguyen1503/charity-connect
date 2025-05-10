@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Support\Str;
 
 class Event extends Model
 {
@@ -11,6 +12,25 @@ class Event extends Model
     protected $primaryKey = 'event_id';
     public $incrementing = false;
     protected $keyType = 'string';
+    protected $fillable = [
+        'event_id', 'organization_id', 'name', 'description', 'start_date', 'end_date',
+        'location', 'min_quantity', 'max_quantity', 'quantity_now', 'status', 'approved', 'image'
+    ];
+
+    protected static function boot()
+    {
+        parent::boot();
+        static::creating(function ($model) {
+            if (empty($model->event_id)) {
+                $model->event_id = (string) Str::uuid();
+            }
+        });
+    }
+    // Thêm $casts để tự động chuyển đổi ngày giờ thành Carbon
+    protected $casts = [
+        'start_date' => 'date',
+        'end_date' => 'date',
+    ];
 
     public function organization()
     {
