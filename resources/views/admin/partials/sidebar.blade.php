@@ -45,15 +45,21 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/products" class="nav-link active">
+                <a href="/events/approved" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Sự kiện đã chấp thuận</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index2.html" class="nav-link">
+                <a href="/events/pending" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Sự kiện chưa chấp thuận</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/events/rejected" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Sự kiện bị từ chối</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -64,7 +70,41 @@
               </li>
             </ul>
           </li>
-          
+          <li class="nav-item menu-open">
+            <a href="#" class="nav-link active">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                Quản lý tổ chức
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/organizations/approved" class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Tổ chức đã chấp thuận</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/organizations/pending" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Tổ chức chưa chấp thuận</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/organizations/rejected" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Tổ chức bị từ chối</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/imports" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Quản lý nhập hàng</p>
+                </a>
+              </li>
+            </ul>
+          </li>
           <li class="nav-item">
             <a href="/customers" class="nav-link">
               <i class="nav-icon far fa-circle text-warning"></i>

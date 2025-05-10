@@ -11,21 +11,26 @@ class EventRepository implements EventRepositoryInterface
     }
     public function findById(string $id)
     {
-        return Event::findOrFail($id);
+        return Event::with('organization:organization_id,fullname')
+        ->findOrFail($id)
+       ;
 
     }
     public function getPending()
     {
-        return Event::where('approved', 'pending')->paginate(2);
+        return Event::with('organization:organization_id,fullname')
+        ->where('approved', 'pending')->paginate(2);
 
     }
     public function getApproved()
     {
-        return Event::where('approved', 'approved')->paginate(2);
+        return Event::with('organization:organization_id,fullname')
+        ->orwhere('approved', 'approved')->paginate(2);
     }
     public function getRejected()
     {
-        return Event::where('approved', 'rejected')->paginate(2);
+        return Event::with('organization:organization_id,fullname')
+        ->where('approved', 'rejected')->paginate(2);
     }
     public function approve(string $id)
     {

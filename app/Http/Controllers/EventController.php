@@ -17,15 +17,7 @@ class EventController extends Controller
 
     // lấy danh sách event chưa được duy
     
-    public function pending(){
 
-        $events = $this->eventService->getPendingEvents();
-
-        return response()->json([
-            'success' => true,
-            'data' => $events
-        ]);
-    }
 
 
     // duyệt event
@@ -38,7 +30,25 @@ class EventController extends Controller
     }
 
     public function index(){
-        $events = $this->eventService->getAllEvents();
+        $events = $this->eventService->getApprove();
         return view('admin.events.content', compact('events'));
+        // return $events;
+    }
+
+    public function getPendingEvents(){
+        $events = $this->eventService->getPendingEvents();
+
+        return view('admin.events.content', compact('events'));
+    }
+
+    public function getRejected(){
+        $events = $this->eventService->getRejected();
+        return view('admin.events.content', compact('events'));
+    }
+
+    // lấy thông tin chi tiết event user 
+    public function profile($id){
+        $event = $this->eventService->getEventById($id);
+        return $event;
     }
 }
